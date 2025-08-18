@@ -18,6 +18,9 @@
         <a href="#profile" class="nav-link">Profile</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
+      <!-- Dark mode & clock -->
+      <button id="themeToggle">🌙 Dark Mode</button>
+      <span id="clock" style="margin-left:15px;font-weight:bold;"></span>
     </div>
   </header>
 
@@ -36,16 +39,39 @@
       </ul>
     </section>
 
-    <!-- ================== REPORTS PLACEHOLDER ===================
-         BRANCH: feature-reports
-         Replace this comment with the Reports section when working in feature-reports
-    -->
+    <!-- Reports Section -->
+    <section id="reports" class="card">
+      <h2>Reports</h2>
+      <table border="1" cellpadding="8" style="width:100%;border-collapse:collapse;">
+        <thead>
+          <tr style="background:#eee;">
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Math</td><td>92</td><td>A</td></tr>
+          <tr><td>Computer Science</td><td>88</td><td>A</td></tr>
+          <tr><td>Physics</td><td>79</td><td>B</td></tr>
+          <tr><td>Chemistry</td><td>85</td><td>A</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-    <!-- ================== ANALYTICS PLACEHOLDER =================
-         BRANCH: feature-analytics
-         Replace this comment with the Analytics section when working in feature-analytics
-    -->
+    <!-- Analytics Section -->
+    <section id="analytics" class="card">
+      <h2>Analytics</h2>
+      <p>Performance graph (marks in %):</p>
+      <div style="display:flex;align-items:flex-end;gap:10px;height:150px;">
+        <div style="width:50px;height:92%;background:#3498db;" title="Math 92%"></div>
+        <div style="width:50px;height:88%;background:#2ecc71;" title="CS 88%"></div>
+        <div style="width:50px;height:79%;background:#f39c12;" title="Physics 79%"></div>
+        <div style="width:50px;height:85%;background:#e74c3c;" title="Chem 85%"></div>
+      </div>
+    </section>
 
+    <!-- Profile Section -->
     <section id="profile" class="card">
       <h2>Profile</h2>
       <form id="profileForm">
@@ -57,6 +83,7 @@
       <p id="profileMsg" class="muted"></p>
     </section>
 
+    <!-- Quick Actions -->
     <section id="quickactions" class="card">
       <h2>Quick Actions</h2>
       <div class="grid-3">
@@ -92,5 +119,49 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+    // Click Me button
+    document.getElementById("clickMe").addEventListener("click", () => {
+      document.getElementById("output").innerText = "✅ JS is working!";
+    });
+
+    // Save profile with localStorage
+    const saveBtn = document.getElementById("saveProfile");
+    saveBtn.addEventListener("click", () => {
+      localStorage.setItem("name", document.getElementById("name").value);
+      localStorage.setItem("email", document.getElementById("email").value);
+      localStorage.setItem("course", document.getElementById("course").value);
+      document.getElementById("profileMsg").innerText = "Profile saved ✔ (data will persist after refresh)";
+    });
+
+    // Load saved profile if available
+    window.onload = () => {
+      if(localStorage.getItem("name")){
+        document.getElementById("name").value = localStorage.getItem("name");
+        document.getElementById("email").value = localStorage.getItem("email");
+        document.getElementById("course").value = localStorage.getItem("course");
+      }
+    };
+
+    // Dark mode toggle
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      if(document.body.classList.contains("dark")){
+        document.getElementById("themeToggle").innerText = "☀ Light Mode";
+      } else {
+        document.getElementById("themeToggle").innerText = "🌙 Dark Mode";
+      }
+    });
+
+    // Live clock
+    function updateClock(){
+      const now = new Date();
+      document.getElementById("clock").innerText =
+        now.toLocaleTimeString();
+    }
+    setInterval(updateClock,1000);
+    updateClock();
+  </script>
 </body>
 </html>
