@@ -156,3 +156,20 @@ repeatFunction10();
 // -------------------------------------------
 // End of Script (~200+ lines)
 // -------------------------------------------
+
+// === Extra Script added in feature-script branch ===
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+        console.log("Dark mode activated");
+    } else {
+        console.log("Light mode activated");
+    }
+}
+
+// Attach it to a button if present
+const themeBtn = document.querySelector("#themeBtn");
+if (themeBtn) {
+    themeBtn.addEventListener("click", toggleTheme);
+}
