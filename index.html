@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Dashboard — Git Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Student Dashboard — GitHub Workflow Demo</h1>
+      <p class="tagline">This repo demonstrates: fork • clone • branch • commit • push • PR • merge</p>
+      <nav class="nav">
+        <a href="#intro" class="nav-link">Intro</a>
+        <a href="#reports" class="nav-link">Reports</a>
+        <a href="#analytics" class="nav-link">Analytics</a>
+        <a href="#profile" class="nav-link">Profile</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="intro" class="card">
+      <h2>Introduction</h2>
+      <p>
+        This small project is designed as a clean, visual demo for Git workflows.
+        You can add sections in branches, open pull requests, and merge them.
+      </p>
+      <ul class="checklist">
+        <li>Main branch: base page</li>
+        <li>feature-reports: adds Reports section</li>
+        <li>feature-analytics: adds Analytics section</li>
+        <li>teammate-theme (fork): modifies CSS theme variables</li>
+      </ul>
+    </section>
+
+    <!-- ================== REPORTS PLACEHOLDER ===================
+         BRANCH: feature-reports
+         Replace this comment with the Reports section when working in feature-reports
+    -->
+
+    <!-- ================== ANALYTICS PLACEHOLDER =================
+         BRANCH: feature-analytics
+         Replace this comment with the Analytics section when working in feature-analytics
+    -->
+
+    <section id="profile" class="card">
+      <h2>Profile</h2>
+      <form id="profileForm">
+        <label>Name: <input type="text" id="name" value="Tejashwini P" /></label><br />
+        <label>Email: <input type="email" id="email" value="student@example.com" /></label><br />
+        <label>Course: <input type="text" id="course" value="B.Tech CSE" /></label><br />
+        <button id="saveProfile" type="button">Save Profile</button>
+      </form>
+      <p id="profileMsg" class="muted"></p>
+    </section>
+
+    <section id="quickactions" class="card">
+      <h2>Quick Actions</h2>
+      <div class="grid-3">
+        <div class="mini card">
+          <h3>Run Demo</h3>
+          <p>Click the button below to trigger a JS action.</p>
+          <button id="clickMe">Click Me</button>
+          <p id="output" class="muted"></p>
+        </div>
+        <div class="mini card">
+          <h3>Shortcuts</h3>
+          <ul>
+            <li>Open README</li>
+            <li>View branches</li>
+            <li>Open PRs</li>
+          </ul>
+        </div>
+        <div class="mini card">
+          <h3>Notes</h3>
+          <p class="muted">This page is intentionally content-rich so diffs in PRs are visible and meaningful.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>If you are a reviewer, please check the Pull Requests tab to see branch-based contributions.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>LedgerLite • Git Demo • &copy; 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
